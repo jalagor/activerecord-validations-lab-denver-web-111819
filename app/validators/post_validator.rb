@@ -1,1 +1,1 @@
-class PostValidator < ActiveModel
+class PostValidator < ActiveModel::Validaotr
