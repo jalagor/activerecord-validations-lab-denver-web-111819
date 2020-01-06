@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   def title_must_be_clickbaity
     list = ["Won't Believe", "Secret", "Top [number]", "Guess"]
     
-    if title.present? && unless title.any?("Won't Believe", "Secret", "Top [number]", "Guess")
+    if title.present? && ([title] & ["Won't Believe", "Secret", "Top [number]", "Guess"]).none?
       errors.add(:title, "must be clickbaity")
     end
   end
