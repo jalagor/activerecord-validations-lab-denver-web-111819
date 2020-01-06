@@ -1,7 +1,7 @@
 class PostValidator < ActiveModel::Validator
   
   def validate(record)
-    unless record.title.match
+    unless record.title =~ ()
 
 
 end
