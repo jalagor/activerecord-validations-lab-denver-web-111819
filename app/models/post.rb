@@ -6,9 +6,8 @@ class Post < ActiveRecord::Base
   validate :title_must_be_clickbaity
    
   def title_must_be_clickbaity
-    # list = ["Won't Believe", "Secret", "Top [number]", "Guess"]
-    
-    if ([title] & ["Won't Believe", "Secret", "Top [number]", "Guess"]).none?
+
+    if ([title] =~ ["Won't Believe", "Secret", "Top [number]", "Guess"]).none?
       errors.add(:title, "must be clickbaity")
     end
   end
