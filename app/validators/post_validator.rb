@@ -1,1 +1,1 @@
-class postValidator < 
+class PostValidator < ActiveModel
