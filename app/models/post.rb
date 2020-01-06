@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   
-  ActiveModel::Validations
+  include ActiveModel::Validations
   validates_with PostValidator
   validates :title, presence: true
   validates :content, length: {minimum: 250}
